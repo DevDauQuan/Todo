@@ -10,7 +10,7 @@ export const createTask = async (req, res, next) => {
         const saveTask = await task.save();
         return res.status(201).json({ task: saveTask });
     } catch (error) {
-        next(err);
+        next(error);
     }
 }
 
@@ -21,7 +21,7 @@ export const updateTask = async (req, res, next) => {
 
         return res.status(201).json({ task })
     } catch (error) {
-        next(err);
+        next(error);
     }
 }
 export const getTask = async (req, res, next) => {
@@ -32,7 +32,7 @@ export const getTask = async (req, res, next) => {
 
         return res.status(201).json(task);
     } catch (error) {
-        next(err);
+        next(error);
     }
 }
 export const getTasks = async (req, res, next) => {
@@ -62,7 +62,7 @@ export const getTasks = async (req, res, next) => {
         }
         return res.status(201).json({ tasks });
     } catch (error) {
-        next(err);
+        next(error);
     }
 }
 
@@ -74,6 +74,6 @@ export const deleteTask = async (req, res, next) => {
 
         return res.status(201).json(task);
     } catch (error) {
-        next(err);
+        next(error);
     }
 }
